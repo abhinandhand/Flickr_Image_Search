@@ -12,6 +12,7 @@ export class ImageSearchComponent implements OnInit {
   searchParams = {text : this.searchTerm, pageNo: 1};
   navigation: any = {
     resultData : [],
+    nextIndex: 0,
   };
   constructor(private flickrService: FlickrService) { }
 
@@ -30,9 +31,14 @@ export class ImageSearchComponent implements OnInit {
   convertToGallery(resultData: any){
     const pageData: any = {};
     const photos = resultData.photo;
-    const [col1 , col2, col3, col4] = [photos.slice(0, 12),
-      photos.slice(12, 24), photos.slice(24,  36), photos.slice(36, photos.length)];
-    pageData['columns'] = [col4, col2, col3, col1];
+    let columns = [[], [], [], []];
+    let next = this.navigation.nextIndex;
+    photos.forEach(element => {
+     columns[next].push(element);
+     next = next === 3 ? 0 : next + 1;
+    });
+    this.navigation.nextIndex = next;
+    pageData['columns'] = columns;
     this.navigation.resultData.push(pageData);
     console.log(this.navigation.resultData);
   }
