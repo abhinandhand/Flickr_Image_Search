@@ -1,0 +1,54 @@
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .gallery-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+
+  .input-div{
+    margin: auto;
+    text-align: center;
+    padding: 12px 0px;
+    width: 300px;
+  }
+
+  .img-div{
+    margin: 0px 0px 8px 0px;
+    cursor: pointer;
+  }
+  .caption{
+    background-color: #8080805e;
+    color: #241f1f;
+    padding: 3px;
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  
+  /* For Tablet devices Responsive layout- two colum layout   */
+  @media (max-width: 800px) {
+    .gallery-column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* For Mobile devices Responsive layout - makes column stack , image takes full width of container*/
+  @media (max-width: 600px) {
+    .gallery-column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }

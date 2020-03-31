@@ -1,0 +1,13 @@
+.img-div{
+    margin: 0px 0px 8px 0px;
+    cursor: pointer;
+  }
+  .caption{
+    background-color: #8080805e;
+    color: #241f1f;
+    padding: 3px;
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }

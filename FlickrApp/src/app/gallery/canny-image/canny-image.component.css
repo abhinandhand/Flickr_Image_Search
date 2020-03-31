@@ -1,0 +1,45 @@
+.responsive {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+.row-div{
+    margin: 0;
+    padding: 15px 0px;
+    background-color: #9e9e9ede;
+}  
+canvas {
+    max-width: 100%;
+    height: auto;
+    
+}
+.label-img{
+    font-size: 23px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+.label-tag{
+    color: #fff;
+    padding-right: 11px;
+}
+.label-btn{
+    padding-top: 22px;
+}
+.btn-route{
+    width: 32%;
+    font-size: 18px;
+    background-color: #aa2622;
+    border-color: #aa2622;
+}
+@media (max-width: 600px) {
+    .label-img{
+        font-size: 18px;
+        padding: 8px 0px;
+    
+    }
+    .btn-route{
+        width: 100%;
+    }
+}

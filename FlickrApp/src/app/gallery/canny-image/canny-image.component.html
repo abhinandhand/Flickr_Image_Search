@@ -1,0 +1,39 @@
+
+<div class="row row-div">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="responsive">
+            <canvas id="canvasOutput"></canvas>
+        </div>
+        
+        <!-- <img id="canny-img" [src]="rawImage.url" alt="Nature" class="responsive"> -->
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="label-img"><span class="label-tag">Title</span> {{rawImage.title}} </div>
+        <div class="label-img"><span class="label-tag">Posted Date</span> {{rawImage.dateupload | date }} </div>
+        <div class="label-img"><span class="label-tag">Owner</span> {{rawImage.owner}} </div>
+        <div class="label-img label-btn">
+            <button class="btn btn-info btn-route" (click)="goBackGallery()">Gallery</button>
+        </div>
+        
+    </div>
+    <div style="visibility: hidden;">
+        <img id="canny-img">
+        <canvas id="canvasInput"></canvas>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <button (click)="openModal()">Open Modal</button>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div> -->
