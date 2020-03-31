@@ -31,15 +31,14 @@ export class ImageSearchComponent implements OnInit {
   convertToGallery(resultData: any){
     const pageData: any = {};
     const photos = resultData.photo;
-    let columns = [[], [], [], []];
+    let columns = this.navigation.resultData.length > 0 ? this.navigation.resultData :  [[], [], [], []];
     let next = this.navigation.nextIndex;
     photos.forEach(element => {
      columns[next].push(element);
      next = next === 3 ? 0 : next + 1;
     });
     this.navigation.nextIndex = next;
-    pageData['columns'] = columns;
-    this.navigation.resultData.push(pageData);
+    this.navigation.resultData = columns;
     console.log(this.navigation.resultData);
   }
 

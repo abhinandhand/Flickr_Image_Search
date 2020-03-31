@@ -4,29 +4,29 @@
             <input name="search-term" type="text" class="form-control" [(ngModel)]="searchTerm" placeholder=" search photos...">
         </form>
     </div>
-    <div *ngFor="let page of navigation.resultData; let i = index;" class="gallery-row">
+    <div class="gallery-row">
             
             <div class="gallery-column">
-                <div class="img-div" *ngFor="let photo of page.columns[0]; let j = index;">
+                <div class="img-div" *ngFor="let photo of navigation.resultData[0]; let j = index;">
                     <app-image-tile [tileData]="photo"></app-image-tile>
                 </div>
             </div> 
 
             <div  class="gallery-column">
-                <div  class="img-div" *ngFor="let photo of page.columns[1]; let j = index;">
+                <div  class="img-div" *ngFor="let photo of navigation.resultData[1]; let j = index;">
                     <app-image-tile [tileData]="photo"></app-image-tile>
                 </div>
                 
             </div>
 
             <div   class="gallery-column">
-                <div  class="img-div" *ngFor="let photo of page.columns[2]; let j = index;">
+                <div  class="img-div" *ngFor="let photo of navigation.resultData[2]; let j = index;">
                     <app-image-tile [tileData]="photo"></app-image-tile> 
                 </div> 
             </div>
 
             <div   class="gallery-column">
-                <div  class="img-div" *ngFor="let photo of page.columns[3]; let j = index;">
+                <div  class="img-div" *ngFor="let photo of navigation.resultData[3]; let j = index;">
                     <app-image-tile [tileData]="photo"></app-image-tile>
                 </div>  
                 
