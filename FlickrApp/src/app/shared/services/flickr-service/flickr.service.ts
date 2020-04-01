@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { ConfigService } from '../config-service/config.service';
 
 // const URL = `https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=ef1f9d4f8ca80dada31
 // c684364355282&FLickrApi_sig=d7f57fa9e01a6a2d6ccd8597b8d2f86b&nojsoncallback=1&form
@@ -12,6 +13,7 @@ const BASE_URL = 'https://api.flickr.com/services/rest?';
 export class FlickrService {
 
   constructor(private httpClient: HttpClient) { }
+
 
   fetchImages(data){
     const params = this.paramBuilder(data);
@@ -29,6 +31,7 @@ export class FlickrService {
   .set('text', data.text)
   .set('page', data.pageNo)
   .set('per_page', '50')
+  .set('sort', 'relevance')
   .set('content_type', '7')
   .set('extras', 'owner_name,date_upload');
     return params;

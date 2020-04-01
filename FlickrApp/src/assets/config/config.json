@@ -1,0 +1,7 @@
+{
+    "apiKey": "ef1f9d4f8ca80dada31c684364355282",
+    "flickrAPISign":"d7f57fa9e01a6a2d6ccd8597b8d2f86b",
+    "method":"flickr.photos.search",
+    "perPage":"50"
+
+}

@@ -49,9 +49,11 @@ export class ImageSearchComponent implements OnInit {
   }
 
   search(){
-    this.navigation.resultData = [];
-    this.searchParams.text = this.searchTerm;
-    this.invokeFlickrAPI();
+    if (this.searchParams.text !== this.searchTerm){
+      this.navigation.resultData = [];
+      this.searchParams.text = this.searchTerm;
+      this.invokeFlickrAPI();
+    }
   }
 
   fetchNextPagePics(){
