@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import cannyEdgeDetector from 'canny-edge-detector';
-import Image from 'image-js';
 import { DomSanitizer } from '@angular/platform-browser';
 declare var cv: any;
 
@@ -36,7 +34,7 @@ export class CannyImageComponent implements OnInit {
         const ctx = canvas.getContext('2d');
         const img: any = document.getElementById('canny-img');
         img.crossOrigin = 'anonymous';
-        img.onload = (()=> {
+        img.onload = (() => {
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0, img.width, img.height);

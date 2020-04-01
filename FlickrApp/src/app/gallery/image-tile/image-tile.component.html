@@ -1,6 +1,8 @@
 <div (click)="showCannyImage()" class="img-div">
-    <img src="{{ 'https://farm'+tileData.farm +'.staticflickr.com/' + tileData.server + '/' + tileData.id + '_' + tileData.secret +'.jpg'}}" style="width:100%">
+    <img id="tileData.id" src="{{ 'https://farm'+tileData.farm +'.staticflickr.com/' + tileData.server + '/' + tileData.id + '_' + tileData.secret +'.jpg'}}" style="width:100%">
     <div class="caption">
         <span>{{tileData.title}}</span>
     </div>
 </div>
+<!-- <img  (load)="loadImageArrayAsync(i+1)" class="{{'preload'+tileData.id}}"  data-src="" style="width: 1px;height: 1px;"> -->
+

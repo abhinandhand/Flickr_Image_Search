@@ -1,3 +1,6 @@
+input{
+  height: 44px;
+}
 .gallery-row {
     display: flex;
     flex-wrap: wrap;
@@ -19,8 +22,8 @@
   .input-div{
     margin: auto;
     text-align: center;
-    padding: 12px 0px;
-    width: 300px;
+    padding: 21px 0px;
+    width: 367px;
   }
 
   .img-div{
@@ -36,6 +39,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
   }
+
+  .no-result{
+    text-align: center;
+    padding: 50px 0px;
+  }
   
   /* For Tablet devices Responsive layout- two colum layout   */
   @media (max-width: 800px) {
@@ -50,5 +58,8 @@
     .gallery-column {
       flex: 100%;
       max-width: 100%;
+    }
+    .input-div{
+      width: 95%;
     }
   }

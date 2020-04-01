@@ -8,23 +8,27 @@ import { FlickrService } from 'src/app/shared/services/flickr-service/flickr.ser
   styleUrls: ['./image-search.component.css']
 })
 export class ImageSearchComponent implements OnInit {
-  searchTerm = 'Test';
+  searchTerm = 'Sky';
   searchParams = {text : this.searchTerm, pageNo: 1};
   navigation: any = {
     resultData : [],
     nextIndex: 0,
+    noResultFound: false
   };
   constructor(private flickrService: FlickrService) { }
 
   ngOnInit(): void {
     this.invokeFlickrAPI();
-   // window.addEventListener('scroll', this.intialiseIncrementalLoading, true); 
   }
 
   invokeFlickrAPI(){
+    this.navigation.noResultFound = false;
     this.flickrService.fetchImages(this.searchParams).subscribe((data: any) => {
-      console.log(data);
+      if (data.photos.total !== '0'){
       this.convertToGallery(data.photos);
+      }else{
+        this.navigation.noResultFound = true;
+      }
     });
   }
 
@@ -39,7 +43,6 @@ export class ImageSearchComponent implements OnInit {
     });
     this.navigation.nextIndex = next;
     this.navigation.resultData = columns;
-    console.log(this.navigation.resultData);
   }
 
   search(){
@@ -52,17 +55,5 @@ export class ImageSearchComponent implements OnInit {
     this.searchParams.pageNo += 1;
     this.invokeFlickrAPI();
   }
-
-
-
-  // intialiseIncrementalLoading = (event) => {
-  //   if (this.navigation.resultData.length >= 1 ){
-  //         if ((window.innerHeight + window.scrollY + 300) >= document.body.offsetHeight) {
-  //             this.fetchNextPagePics();
-  //         }
-  //     }
-  //   }
-
-
 
 }

@@ -4,7 +4,10 @@
             <input name="search-term" type="text" class="form-control" [(ngModel)]="searchTerm" placeholder=" search photos...">
         </form>
     </div>
-    <div class="gallery-row">
+    <div *ngIf="!navigation.noResultFound">
+        <div infinite-scroll [infiniteScrollDistance]="1"
+    [infiniteScrollUpDistance]="2" [infiniteScrollThrottle]="300"
+    (scrolled)="fetchNextPagePics()" class="gallery-row">
             
             <div class="gallery-column">
                 <div class="img-div" *ngFor="let photo of navigation.resultData[0]; let j = index;">
@@ -31,6 +34,11 @@
                 </div>  
                 
             </div>    
+        </div>
     </div>
-    <button (click)="fetchNextPagePics()">Show more photos</button>
+
+    <div class="no-result" *ngIf="navigation.noResultFound">
+        <h1>Sorry we couldn't find any matches for <span style="color: #4ad295;">{{searchParams.text}}</span>.</h1>
+    </div>
+    
 </div>
