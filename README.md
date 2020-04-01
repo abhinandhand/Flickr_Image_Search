@@ -2,11 +2,10 @@
 
  Angular frontend application which can display the search result of flickr images search API and calculates the Image Edges for the preview images.
 
-Application is deployed in Github pages and can be accsed through below link
-Link to App: https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/search
- ```
- Link to App: [Flickr APP](https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/search)
-```
+Application is deployed on Github pages and can be accsed through below link
+
+Link to App: https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp
+
 
  ## Getting Started
 
@@ -61,7 +60,8 @@ ng serve
 * Application has 2 pages with search & preview. In future we can include url params for the pages which is helpful for sharing the search or images. (Had option of creating a modal for preview)
 
 * API information like URL's, API_KEY, defaultPageSize etc... can be configured remotely. Currently have placed the configuraton json under assets/config [Application Configuration API](https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/assets/config/config.json) through a json file (Work pending)
-Link to Configuration JSON - https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/search
+
+Link to Configuration JSON - https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/assets/config/config.json
 
 * Bootstrap 3 as a CSS framework.
 
