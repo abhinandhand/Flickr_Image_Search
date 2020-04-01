@@ -13,7 +13,8 @@ export class ImageSearchComponent implements OnInit {
   navigation: any = {
     resultData : [],
     nextIndex: 0,
-    noResultFound: false
+    noResultFound: false,
+    totalPages: 0
   };
   constructor(private flickrService: FlickrService) { }
 
@@ -23,9 +24,11 @@ export class ImageSearchComponent implements OnInit {
 
   invokeFlickrAPI(){
     this.navigation.noResultFound = false;
+    this.navigation.totalPages = 0;
     this.flickrService.fetchImages(this.searchParams).subscribe((data: any) => {
       if (data.photos.total !== '0'){
-      this.convertToGallery(data.photos);
+        this.navigation.totalPages = data.photos.pages;
+        this.convertToGallery(data.photos);
       }else{
         this.navigation.noResultFound = true;
       }
@@ -53,7 +56,9 @@ export class ImageSearchComponent implements OnInit {
 
   fetchNextPagePics(){
     this.searchParams.pageNo += 1;
+    if (this.searchParams.pageNo <= this.navigation.totalPages){
     this.invokeFlickrAPI();
+    }
   }
 
 }
