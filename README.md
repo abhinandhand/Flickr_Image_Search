@@ -84,6 +84,8 @@ Link to Configuration JSON - https://abhinandhand.github.io/Flickr_Image_Search/
 
 * Add search params on application url - [Started, not completed]
 * Remote Configuration for the application - [Started, not completed]
+* Placeholder Images for Image tiles - [Not yet started]
+* Spinner/ Loader while fetching the results - [Not yet started]
     
 
 
