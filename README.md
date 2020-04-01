@@ -18,10 +18,10 @@ Angular CLI: 9.1.0
 Clone the repository
 
 ```
-https://github.com/abhinandhand/Flickr_Image_Search.git
+git clone https://github.com/abhinandhand/Flickr_Image_Search.git
 ```
 
-Open the terminal window and Navigate to the project folder. 
+Open the terminal or command-prompt and navigate to the project folder. 
 
 ```
 cd Flickr_Image_Search/FlickrApp
