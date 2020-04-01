@@ -57,7 +57,7 @@ ng serve
 
 ### Architectural choices
 
-* Application has 2 pages with search & preview. In future we can include url params for the pages which is helpful for sharing the search or images. (Had option of creating a modal for preview)
+* Application has 2 pages with search & preview. In future we can include url params for the pages which is helpful for sharing the search results or images. (Had option of creating a modal for preview)
 
 * API information like URL's, API_KEY, defaultPageSize etc... can be configured remotely. Currently have placed the configuraton json under assets/config [Application Configuration API](https://abhinandhand.github.io/Flickr_Image_Search/FlickrApp/assets/config/config.json) through a json file (Work pending)
 
@@ -68,9 +68,22 @@ Link to Configuration JSON - https://abhinandhand.github.io/Flickr_Image_Search/
 * Search results are sorted by relevance. Also can be configured remotely
 
 
-
 ### Assumptions
 * Choosen opencv.js library which is placed under assets/js/opencv.js instead of a npm module
+
+
+### Requirements completed
+
+* Lists the search results of flickr api - [Completed]
+* It supports incremental loading when the user scroll the page - [Completed]
+* When you click on one of the images, it calculates the edges of the images - [Completed]
+* Responsive app design [Completed]
+
+
+### Additional features
+
+* Add search params on application url - [Started, not completed]
+* Remote Configuration for the application - [Started, not completed]
     
 
 
