@@ -13,7 +13,7 @@ Node: 12.14.1
 Angular CLI: 9.1.0
 ```
 
-### Running on local machine
+### To Run on local machine
 
 Clone the repository
 
@@ -38,6 +38,31 @@ To run on local server
 ```
 ng serve
 ```
+
+### src directory architecture
+
+    src
+    ├── app                    
+    │   ├── gallery             #  Feature module containing the components 
+    │   │  ├── widgets          # Contains & represents number of pages for the application
+    │   │  ├── widget-modules   # Contains resusable ui-components
+    │   ├── shared              #  Contains services, templates, pipes shared across the project
+    │   └── app.routing         #  Routes configuration with 2 pages.For search & preview
+
+
+### Architectural choices
+
+* Application has 2 pages with search & preview. In future we can include url params for the pages which is helpful for sharing the search or images. (Had option of creating a modal for preview)
+* API information like URL's, API_KEY, defaultPageSize etc... can be configured remotely. Currently have placed the configuraton json under [Application Configuration API](http://localhost:4200/assets/config/config.json) through a json file (Work pending)
+* Bootstrap 3 as a CSS framework.
+* Search results are sorted by relevance. Also can be configured remotely
+* Choosen opencv.js library which is placed under assets/js/opencv.js
+
+
+### Assumptions
+    
+
+
 
 
 

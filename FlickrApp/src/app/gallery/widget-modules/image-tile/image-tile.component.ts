@@ -18,7 +18,7 @@ export class ImageTileComponent implements OnInit {
   }
 
   showCannyImage(){
-    this.router.navigate(['canny-image'], {state : {data : this.tileData}});
+    this.router.navigate(['preview'], {state : {data : this.tileData}});
   }
 
 }
